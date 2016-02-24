@@ -28,10 +28,15 @@ def to_latex_bmatrix(A):
 	latexStr += "\end{bmatrix}"
 	return latexStr
 
-delta = np.linalg.det(A)
-if math.fabs(delta) < 1e-10:
-	print "$$%s，不存在逆矩阵！$$\n\n" % (to_latex_bmatrix(A))
+n, m = A.shape
+if n == m:
+	delta = np.linalg.det(A)
+	if math.fabs(delta) < 1e-10:
+		print "$$%s，不存在逆矩阵！$$\n\n" % (to_latex_bmatrix(A))
+	else:
+		B = A ** (-1)
+		print "$$%s^{-1} = %s$$\n\n" % (to_latex_bmatrix(A), to_latex_bmatrix(B))
 else:
-	B = A ** (-1)
-	print "$$%s^{-1} = %s$$\n\n" % (to_latex_bmatrix(A), to_latex_bmatrix(B))
+	print "$$%s，不存在逆矩阵！$$\n\n" % (to_latex_bmatrix(A))
+
 sys.exit(0)
