@@ -1,4 +1,4 @@
-# matrix-baisc
+# matrix-inv
 矩阵的逆
 
 本工具使用numpy.matrix实现
