@@ -2,6 +2,7 @@
 from __future__ import division
 import sys
 import numpy as np
+import math
 
 def getMatrixString(idx):
 	A = data[idx].replace("\n", ";")
