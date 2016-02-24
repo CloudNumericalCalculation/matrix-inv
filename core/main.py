@@ -32,11 +32,11 @@ n, m = A.shape
 if n == m:
 	delta = np.linalg.det(A)
 	if math.fabs(delta) < 1e-10:
-		print "$$%s，不存在逆矩阵！$$\n\n" % (to_latex_bmatrix(A))
+		print "$$%s 不存在逆矩阵！$$\n\n" % (to_latex_bmatrix(A))
 	else:
 		B = A ** (-1)
 		print "$$%s^{-1} = %s$$\n\n" % (to_latex_bmatrix(A), to_latex_bmatrix(B))
 else:
-	print "$$%s，不存在逆矩阵！$$\n\n" % (to_latex_bmatrix(A))
+	print "$$%s 不是方阵！$$\n\n" % (to_latex_bmatrix(A))
 
 sys.exit(0)
